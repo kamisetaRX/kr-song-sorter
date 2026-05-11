@@ -12,6 +12,7 @@ dataSet[dataSetVersion].options = [
       { name: "Heisei Phase 1", key: "heisei", checked: true },
       { name: "Heisei Phase 2", key: "heisei2", checked: true },
       { name: "Reiwa",  key: "reiwa",  checked: true },
+      { name: "Misc",  key: "misc", tooltip: "Content that doesn't have a defined era",  checked: true },
     ]
   },
   {
@@ -23,7 +24,7 @@ dataSet[dataSetVersion].options = [
       { name: "Opening",        key: "op",        checked: true },
       { name: "Ending",         key: "ed",        checked: true },
       { name: "Insert Song",    key: "insert",    checked: true },
-      { name: "Character Song", key: "character", checked: true },
+      { name: "Character Song", key: "character", tooltip: "Filters character songs. Note: Many character songs are CD-exclusive, so you may want to uncheck that", checked: true },
       { name: "Movie Song",     key: "movie",     checked: true },
       { name: "Specials/Miniseries Songs",     key: "special",     checked: true },
     ]
@@ -35,43 +36,51 @@ dataSet[dataSetVersion].options = [
     checked: true,
     sub: [
       // Showa
-      { name: "Kamen Rider (1971)", key: "1971",     checked: true },
-      { name: "Kamen Rider V3",     key: "v3",       checked: true },
-      { name: "Kamen Rider X",      key: "x",        checked: true },
-      { name: "Kamen Rider Amazon", key: "amazon",   checked: true },
-      { name: "Kamen Rider Stronger", key: "stronger", checked: true },
-      { name: "Kamen Rider (Skyrider)", key: "skyrider", checked: true },
-      { name: "Kamen Rider Super-1", key: "super-1", checked: true },
-      { name: "Kamen Rider ZX",     key: "ZX",       checked: true },
-      { name: "Kamen Rider Black",  key: "black",    checked: true },
-      { name: "Kamen Rider Black RX", key: "blackrx", checked: true},
+      { name: "Kamen Rider (1971)", key: "1971",     checked: false },
+      { name: "Kamen Rider V3",     key: "v3",       checked: false },
+      { name: "Kamen Rider X",      key: "x",        checked: false },
+      { name: "Kamen Rider Amazon", key: "amazon",   checked: false },
+      { name: "Kamen Rider Stronger", key: "stronger", checked: false },
+      { name: "Kamen Rider (Skyrider)", key: "skyrider", checked: false },
+      { name: "Kamen Rider Super-1", key: "super-1", checked: false },
+      { name: "Kamen Rider ZX",     key: "ZX",       checked: false },
+      { name: "Kamen Rider Black",  key: "black",    checked: false },
+      { name: "Kamen Rider Black RX", key: "blackrx", checked: false},
       // Heisei Phase 1
-      { name: "Kamen Rider Kuuga",  key: "kuuga",    checked: true },
-      { name: "Kamen Rider Agito",  key: "agito",    checked: true },
-      { name: "Kamen Rider Ryuki",  key: "ryuki",    checked: true },
-      { name: "Kamen Rider 555",    key: "555",      checked: true },
-      { name: "Kamen Rider Blade",  key: "blade",    checked: true },
-      { name: "Kamen Rider Hibiki", key: "hibiki",   checked: true },
-      { name: "Kamen Rider Kabuto", key: "kabuto",   checked: true },
-      { name: "Kamen Rider Den-O",  key: "den-o",    checked: true },
-      { name: "Kamen Rider Kiva",   key: "kiva",     checked: true },
-      { name: "Kamen Rider Decade", key: "decade",   checked: true },
+      { name: "Kamen Rider Kuuga",  key: "kuuga",    checked: false },
+      { name: "Kamen Rider Agito",  key: "agito",    checked: false },
+      { name: "Kamen Rider Ryuki",  key: "ryuki",    checked: false },
+      { name: "Kamen Rider 555",    key: "555",      checked: false },
+      { name: "Kamen Rider Blade",  key: "blade",    checked: false },
+      { name: "Kamen Rider Hibiki", key: "hibiki",   checked: false },
+      { name: "Kamen Rider Kabuto", key: "kabuto",   checked: false },
+      { name: "Kamen Rider Den-O",  key: "den-o",    checked: false },
+      { name: "Kamen Rider Kiva",   key: "kiva",     checked: false },
+      { name: "Kamen Rider Decade", key: "decade",   checked: false },
       //Heisei Phase 2
-      { name: "Kamen Rider W",      key: "w",        checked: true },
-      { name: "Kamen Rider OOO",    key: "ooo",      checked: true },
-      { name: "Kamen Rider Fourze", key: "fourze",   checked: true },
-      { name: "Kamen Rider Wizard", key: "wizard",   checked: true },
-      { name: "Kamen Rider Gaim",   key: "gaim",     checked: true },
-      { name: "Kamen Rider Drive",  key: "drive",    checked: true },
-      { name: "Kamen Rider Ghost",  key: "ghost",    checked: true },
-      { name: "Kamen Rider Ex-Aid", key: "ex-aid",   checked: true },
-      { name: "Kamen Rider Build",  key: "build",    checked: true },
-      { name: "Kamen Rider Zi-O",   key: "zi-o",    vchecked: true },
+      { name: "Kamen Rider W",      key: "w",        checked: false },
+      { name: "Kamen Rider OOO",    key: "ooo",      checked: false },
+      { name: "Kamen Rider Fourze", key: "fourze",   checked: false },
+      { name: "Kamen Rider Wizard", key: "wizard",   checked: false },
+      { name: "Kamen Rider Gaim",   key: "gaim",     checked: false },
+      { name: "Kamen Rider Drive",  key: "drive",    checked: false },
+      { name: "Kamen Rider Ghost",  key: "ghost",    checked: false },
+      { name: "Kamen Rider Ex-Aid", key: "ex-aid",   checked: false },
+      { name: "Kamen Rider Build",  key: "build",    checked: false },
+      { name: "Kamen Rider Zi-O",   key: "zi-o",     checked: false },
       // Reiwa
-      { name: "Kamen Rider Zero-One", key: "zero_one", checked: true },
+      { name: "Kamen Rider Zero-One", key: "zero_one", checked: false },
+      { name: "Kamen Rider Saber",    key: "saber",    checked: false },
+      { name: "Kamen Rider Revice",   key: "revice",   checked: false },
+      { name: "Kamen Rider Geats",    key: "geats",    checked: false },
+      { name: "Kamen Rider Gotchard", key: "gotchard", checked: false },
+      { name: "Kamen Rider Gavv",     key: "gavv", checked: false },
+      { name: "Kamen Rider Zeztz",    key: "zeztz", checked: false },
 
       // EX
-      { name: "Other",  key: "other", tooltip: "Extra Material, such as one-offs, miniseries, or games",  checked: true },
+      { name: "EX Seasons",  key: "exseason", tooltip: "Includes Amazons, Shinobi, Black Sun, Outsiders, and Girls Remix",  checked: false },
+      { name: "EX Movies",  key: "exmovie", tooltip: "Includes Showa Trilogy, and The First/Next",  checked: false },
+      { name: "Other",  key: "other", tooltip: "Extra Material, such as one-offs, games, or misc material",  checked: false },
     ]
   },
   {
@@ -1073,9 +1082,9 @@ dataSet[dataSetVersion].characterData = [
     name: "Forever",
     img: "aRIhYanro70",
     opts: {
-      era: ["showa"],
+      era: ["showa", "misc"],
       type: ["movie", "ed", "op"],
-      series: ["other"]
+      series: ["exmovie"]
     }
   },
   {
@@ -1083,42 +1092,42 @@ dataSet[dataSetVersion].characterData = [
     img: "WlDzX_xXNNw",
     opts: {
       era: ["showa"],
-      type: ["insert"],
-      series: ["other"]
+      type: ["showa", "misc"],
+      series: ["exmovie"]
     }
   },
   {
     name: "Ai ga Tomaranai",
     img: "28Fp_U80VEw",
     opts: {
-      era: ["showa"],
+      era: ["showa", "misc"],
       type: ["movie", "ed", "op"],
-      series: ["other"]
+      series: ["exmovie"]
     }
   },
   {
     name: "Just One Love",
     img: "u3N76UUP23s",
     opts: {
-      era: ["showa"],
+      era: ["showa", "misc"],
       type: ["insert"],
-      series: ["other"]
+      series: ["exmovie"]
     }
   },
   {
     name: "Kokoro Tsunagu Ai",
     img: "dxxAzmlKK2M",
     opts: {
-      era: ["showa"],
+      era: ["showa", "misc"],
       type: ["movie", "ed", "op"],
-      series: ["other"]
+      series: ["exmovie"]
     }
   },
   {
     name: "Kamen Rider SD OP",
     img: "kpq76eaFp8E",
     opts: {
-      era: ["showa"],
+      era: ["showa", "misc"],
       type: ["op"],
       series: ["other"]
     }
@@ -2664,7 +2673,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Over Again",
     img: "OuPxf16yd7o",
     opts: {
-      era: ["heisei2"],
+      era: ["heisei2", "misc"],
       type: ["insert"],
       series: ["other"],
       cd_only: false
@@ -3061,58 +3070,893 @@ dataSet[dataSetVersion].characterData = [
     }
   },
   {
-    name: "REAL×EYEZ",
-    img:  "gcFxf9Kz4oQ",
+    name: "JUST LIVE MORE",
+    img: "EnCREIxTYpA",
     opts: {
-      era:    ["reiwa"],
-      type:   ["op"],
-      series: ["zero_one"]
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["gaim"],
+      cd_only: false
     }
   },
   {
-    name: "Omae o Tomerareru no wa Tada Hitori, Ore da! ~Find a new life",
-    img:  "kidBPd-QyJo",
+    name: "E-X-A (Exciting × Attitude)",
+    img: "oZFOXNzJH2A",
     opts: {
-      era:    ["reiwa"],
-      type:   ["insert"],
-      series: ["zero_one"]
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["gaim"],
+      cd_only: false
     }
   },
   {
-    name: "Hybridrise! Zero-One ~Rising sun",
-    img:  "BQb3tfSblLo",
+    name: "Toki no Hana",
+    img: "pifNGV23Q-A",
     opts: {
-      era:    ["reiwa"],
-      type:   ["insert"],
-      series: ["zero_one"]
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["gaim"],
+      cd_only: false
     }
   },
   {
-    name: "Henshin! Kamen Rider Zero-Two ~Now is the right time",
-    img:  "oEFFyo_Nieg",
+    name: "Never Surrender",
+    img: "hxZyZHlLnC8",
     opts: {
-      era:    ["reiwa"],
-      type:   ["insert"],
-      series: ["zero_one"]
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["gaim"],
+      cd_only: false
     }
   },
   {
-    name: "Humagear Anthem",
-    img:  "UBKNsANVgwo",
+    name: "Rise Up Your Flag",
+    img: "lGt4cGGpQqM",
     opts: {
-      era:    ["reiwa"],
-      type:   ["insert"],
-      series: ["zero_one"],
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Ranbu Escalation",
+    img: "ADuzoF5zyJU",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Point Of No Return",
+    img: "DtJP4KOCtmk",
+    opts: {
+      era: ["heisei2"],
+      type: ["character"],
+      series: ["gaim"],
       cd_only: true
     }
   },
   {
-    name: "Another Daybreak",
-    img:  "oriMgD0e_9I",
+    name: "TEPPEN STAR",
+    img: "LxhACQwWWiI",
     opts: {
-      era:    ["reiwa"],
-      type:   ["movie"],
-      series: ["zero_one"]
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["gaim", "wizard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "YOUR SONG",
+    img: "PuAOXQiz8Fk",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Unperfected World",
+    img: "lxhjeNqVgX0",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Lights of My Wish",
+    img: "oGLwC3UCUtY",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Dance With Me",
+    img: "h4mGm4gAfPo",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "You are the HERO",
+    img: "yfg6VYU-zkA",
+    opts: {
+      era: ["heisei2"],
+      type: ["special"],
+      series: ["gaim"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Dragon Road 2014",
+    img: "IIAd3g8bMEA",
+    opts: {
+      era: ["showa"],
+      type: ["movie", "op"],
+      series: ["ZX"],
+      cd_only: false
+    }
+  },
+  {
+    name: "SURPRISE-DRIVE",
+    img: "VoohGjK0w_s",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Don't lose your mind",
+    img: "1vVFOIC6yxM",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Full throttle",
+    img: "4_YZYbd6iUg",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Unlimited Drive",
+    img: "cXIQi1ungeM",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Spinning Wheel",
+    img: "ISrRlFF3x_A",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Sing my song for you ~ Sayonara no Mukogawa Made",
+    img: "DWy8t0zfQdk",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Who's That Guy",
+    img: "UKJJgihnGOM",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "time",
+    img: "CKkTNssiyoY",
+    opts: {
+      era: ["heisei2"],
+      type: ["special"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "re-ray",
+    img: "rzE5hbKE9O8",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Good bye little moon",
+    img: "GnBKSGUILN8",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "eternity (～from SURPRISE-DRIVE)",
+    img: "f08dpVJk3sY",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Warera Omou, Yue Ni Warera Ari",
+    img: "LKcCTMVJKKs",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["ghost"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Go! Go! Ghost!",
+    img: "o3H8mT6pfiA",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ghost"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Hajimari no Hi",
+    img: "ODIK6OSdsSE",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ghost", "drive"],
+      cd_only: false
+    }
+  },
+  {
+    name: "TIMELESS BLUE…",
+    img: "K9xNjoiee60",
+    opts: {
+      era: ["heisei2"],
+      type: ["special"],
+      series: ["ghost"],
+      cd_only: false
+    }
+  },
+  {
+    name: "ABAYO",
+    img: "TqX_b_KGlVo",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ghost"],
+      cd_only: false
+    }
+  },
+  {
+    name: "NEW WORLD",
+    img: "9KVANB-_zk8",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ghost"],
+      cd_only: false
+    }
+  },
+  {
+    name: "EXCITE",
+    img: "pA44jXweudw",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "B.A.T.T.L.E G.A.M.E",
+    img: "yfpapR2Ljqs",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert", "movie"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Let's Try Together",
+    img: "TzjywlYaBIk",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Wish in the dark",
+    img: "qrzJcLGdcRk",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "PEOPLE GAME",
+    img: "XX9Xb3wF4CQ",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "REAL GAME",
+    img: "EQgQysulOSY",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kaze no Mukou he",
+    img: "VOekMW6_P1c",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Stormy Story",
+    img: "Sw3JpPy5Sy4",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: true
+    }
+  },
+  {
+    name: "JUSTICE",
+    img: "_TfzhT6yP64",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Time of Victory",
+    img: "w2jvEKlo1po",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "hikari",
+    img: "Yyk-6xXht3g",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ex-aid", "ghost"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Life is Beautiful",
+    img: "xwUAxMaSHRU",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Fellow Soldier",
+    img: "FDV5SYahNtg",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Real Heart",
+    img: "qZvu86lDnUE",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Believer",
+    img: "CjQONoSD1QM",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "ray of light",
+    img: "GkZEHSpW1AA",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Be The One",
+    img: "wH00658gyKo",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Ready Go!!",
+    img: "bHVcWNRgJ4M",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Burning My Soul",
+    img: "r3fq7cEJ41I",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Evolution",
+    img: "ZboeU_mPfPU",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Build up",
+    img: "kMdXDTF_mfM",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Law of the Victory",
+    img: "62jYb7jOPBw",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kamen Rider Heisei Generations Final Special Medley",
+    img: "O9I1lPwPNrM",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["build", "ex-aid"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Everlasting Sky",
+    img: "cNRe9j44KEI",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "CROSS",
+    img: "uRSVDd22rlE",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Perfect Triumph",
+    img: "pI2raO2diIQ",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Over \"Quarzter\"",
+    img: "lPzwZwzK8gs",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "IZANAGI",
+    img: "K1y3o6JGoSQ",
+    opts: {
+      era: ["heisei2", "misc"],
+      type: ["op"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Zi-O, Toki no Oja",
+    img: "MER3iOWw23c",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert", "character"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "FUTURE GUARDIAN",
+    img: "QO4t0ZtwD9Q",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert", "character"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Tsuki no Michiru Toki",
+    img: "LdIflbinATk",
+    opts: {
+      era: ["heisei2"],
+      type: ["character"],
+      series: ["zi-o"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Black & White",
+    img: "qxgIPCTqNdM",
+    opts: {
+      era: ["heisei2"],
+      type: ["character"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Revolutionize",
+    img: "W7gXASQ7Nto",
+    opts: {
+      era: ["heisei2"],
+      type: ["character"],
+      series: ["zi-o"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Next New Wφrld",
+    img: "B06_8KzUFyc",
+    opts: {
+      era: ["heisei2"],
+      type: ["insert"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kamen Rider Heisei Generations Forever Medley D.A. Re-Build Mix",
+    img: "8PL6CsPh8O8",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["zi-o", "build"],
+      cd_only: false
+    }
+  },
+  {
+    name: "P. A. R. T. Y. ~Universe Festival~",
+    img: "Gbspmm82Nis",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Brand New Day",
+    img: "S8JpvxMcYdI",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["zi-o"],
+      cd_only: false
+    }
+  },
+  {
+    name: "INSIDE-OUT ZI-O ver.",
+    img: "PTLp6SA3idA",
+    opts: {
+      era: ["heisei2"],
+      type: ["special"],
+      series: ["zi-o", "decade"],
+      cd_only: false
+    }
+  },
+  {
+    name: "INSIDE-OUT DECADE ver.",
+    img: "skZ6sC2lUcI",
+    opts: {
+      era: ["heisei2"],
+      type: ["special"],
+      series: ["zi-o", "decade"],
+      cd_only: false
+    }
+  },
+  {
+    name: "REAL×EYEZ",
+    img: "gcFxf9Kz4oQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Omae o Tomerareru no wa Tada Hitori, Ore da! ~Find a new life",
+    img: "kidBPd-QyJo",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Hybridrise! Zero-One ~Rising sun",
+    img: "BQb3tfSblLo",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Henshin! Kamen Rider Zero-Two ~Now is the right time",
+    img: "oEFFyo_Nieg",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Humagear Anthem",
+    img: "UBKNsANVgwo",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Another Daybreak",
+    img: "oriMgD0e_9I",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "A.I. ∴ All Imagination",
+    img: "BUOmDL1L4XU",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "S.O.S.",
+    img: "tAkFYjCyT3I",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Fontier",
+    img: "P36LY6X5OyA",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["zero_one"],
+      cd_only: false
+    }
+  },
+  {
+    name: "ALMIGHTY ~ Kamen no Yakusoku",
+    img: "Cu3cHPTVn0Q",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kamen Rider Saber",
+    img: "rSRczaxkcdk",
+    opts: {
+      era: ["reiwa"],
+      type: ["ed"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Rewrite the Story",
+    img: "MXxHbuLf_pM",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Will save us",
+    img: "Sl0m5dpQCAA",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "The story never ends",
+    img: "ipF7C9N2YKw",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Timeless Story",
+    img: "bVUlHEQc89o",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "BOOK OF POWER",
+    img: "dPNVv4kPCAI",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["saber"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Taju Roko",
+    img: "7XyGeEoTUb8",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "SPARK",
+    img: "C8a-phEteHU",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Bittersweet",
+    img: "EVRlq5MyCwY",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["saber"],
+      cd_only: false
     }
   },
 ];
