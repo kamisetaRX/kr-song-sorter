@@ -286,6 +286,8 @@ function display() {
   progressBar(`Battle No. ${battleNo}`, percent);
 
   const embedBase = 'https://www.youtube.com/embed/';
+  document.querySelector('.left.sort.image').style.display = 'block';
+  document.querySelector('.right.sort.image').style.display = 'block';
   document.querySelector('.left.sort.image').innerHTML =
     `<iframe width="320" height="180" src="${embedBase}${leftChar.img}" frameborder="0" allowfullscreen></iframe>`;
   document.querySelector('.right.sort.image').innerHTML =
@@ -588,31 +590,7 @@ function generateImage() {
   const tzoffset = (new Date()).getTimezoneOffset() * 60000;
   const filename = 'sort-' + (new Date(timeFinished - tzoffset)).toISOString().slice(0, -5).replace('T', '(') + ').png';
 
-  const results = document.querySelector('.results');
-
-  html2canvas(results, {
-    useCORS: true,
-    allowTaint: false,
-    scrollX: 0,
-    scrollY: -window.scrollY,
-    windowWidth: document.documentElement.scrollWidth,
-    windowHeight: document.documentElement.scrollHeight,
-    width: results.scrollWidth,
-    height: results.scrollHeight,
-    onclone: (clonedDoc) => {
-      // Replace image result cards with text-only rows for the screenshot
-      // (YouTube thumbnails are blocked by CORS and can't appear in canvas exports)
-      clonedDoc.querySelectorAll('.result.image').forEach(el => {
-        const span = el.querySelector('.right span');
-        const num = el.querySelector('.left span');
-        const name = span ? span.textContent : '';
-        const order = num ? num.textContent : '';
-        const replacement = document.createElement('div');
-        replacement.innerHTML = `<div class="result" style="height:auto;min-height:20px;width:300px;display:grid;grid-template-columns:50px 1fr;border:1px solid #000;margin-right:5px;margin-bottom:-1px;font-size:12px;"><div style="padding:3px 3px 3px 0.5em;text-align:right;border-right:1px solid #000;">${order}</div><div style="padding:3px 6px;text-align:center;">${name}</div></div>`;
-        el.replaceWith(replacement.firstChild);
-      });
-    }
-  }).then(canvas => {
+  html2canvas(document.querySelector('.results')).then(canvas => {
     const dataURL = canvas.toDataURL();
     const imgButton = document.querySelector('.finished.getimg.button');
     const resetButton = document.createElement('a');
@@ -766,7 +744,7 @@ function decodeQuery(queryString = window.location.search.slice(1)) {
           document.getElementById(`cb-${opt.key}-${subindex}`).checked = subIsTrue;
           document.getElementById(`cb-${opt.key}-${subindex}`).disabled = optIsTrue;
         });
-        suboptDecodedIndex = suboptDecodedIndex + optIsTrue ? 1 : 0;
+        suboptDecodedIndex = suboptDecodedIndex + (optIsTrue ? 1 : 0);
       } else { document.getElementById(`cb-${opt.key}`).checked = optDecoded[index] === '1'; }
     });
 

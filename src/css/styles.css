@@ -123,6 +123,7 @@ body {
   margin: auto;
   grid-row: 1 / 2;
   cursor: default;
+  display: none;
 }
 
 .sorter > .image iframe {
