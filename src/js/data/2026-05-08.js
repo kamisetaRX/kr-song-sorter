@@ -12,14 +12,13 @@ dataSet[dataSetVersion].options = [
       { name: "Heisei Phase 1", key: "heisei", checked: true },
       { name: "Heisei Phase 2", key: "heisei2", checked: true },
       { name: "Reiwa",  key: "reiwa",  checked: true },
-      { name: "Misc",  key: "misc", tooltip: "Content that doesn't have a defined era",  checked: true },
     ]
   },
   {
     name: "Filter by Type",
     key: "type",
     tooltip: "Check this to restrict song types.",
-    checked: true,
+    checked: false,
     sub: [
       { name: "Opening",        key: "op",        checked: true },
       { name: "Ending",         key: "ed",        checked: true },
@@ -33,7 +32,7 @@ dataSet[dataSetVersion].options = [
     name: "Filter by Series",
     key: "series",
     tooltip: "Check this to restrict which series are included.",
-    checked: true,
+    checked: false,
     sub: [
       // Showa
       { name: "Kamen Rider (1971)", key: "1971",     checked: false },
@@ -78,7 +77,7 @@ dataSet[dataSetVersion].options = [
       { name: "Kamen Rider Zeztz",    key: "zeztz", checked: false },
 
       // EX
-      { name: "EX Seasons",  key: "exseason", tooltip: "Includes Amazons, Shinobi, Black Sun, Outsiders, and Girls Remix",  checked: false },
+      { name: "EX Seasons",  key: "exseason", tooltip: "Includes Amazons, Shinobi, Black Sun, Outsiders, Girls Remix, and Dragon Knight",  checked: false },
       { name: "EX Movies",  key: "exmovie", tooltip: "Includes Showa Trilogy, and The First/Next",  checked: false },
       { name: "Other",  key: "other", tooltip: "Extra Material, such as one-offs, games, or misc material",  checked: false },
     ]
@@ -1082,7 +1081,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Forever",
     img: "aRIhYanro70",
     opts: {
-      era: ["showa", "misc"],
+      era: ["showa"],
       type: ["movie", "ed", "op"],
       series: ["exmovie"]
     }
@@ -1092,7 +1091,7 @@ dataSet[dataSetVersion].characterData = [
     img: "WlDzX_xXNNw",
     opts: {
       era: ["showa"],
-      type: ["showa", "misc"],
+      type: ["showa"],
       series: ["exmovie"]
     }
   },
@@ -1100,7 +1099,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Ai ga Tomaranai",
     img: "28Fp_U80VEw",
     opts: {
-      era: ["showa", "misc"],
+      era: ["showa"],
       type: ["movie", "ed", "op"],
       series: ["exmovie"]
     }
@@ -1109,7 +1108,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Just One Love",
     img: "u3N76UUP23s",
     opts: {
-      era: ["showa", "misc"],
+      era: ["showa"],
       type: ["insert"],
       series: ["exmovie"]
     }
@@ -1118,7 +1117,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Kokoro Tsunagu Ai",
     img: "dxxAzmlKK2M",
     opts: {
-      era: ["showa", "misc"],
+      era: ["showa"],
       type: ["movie", "ed", "op"],
       series: ["exmovie"]
     }
@@ -1127,7 +1126,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Kamen Rider SD OP",
     img: "kpq76eaFp8E",
     opts: {
-      era: ["showa", "misc"],
+      era: ["showa"],
       type: ["op"],
       series: ["other"]
     }
@@ -2673,7 +2672,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Over Again",
     img: "OuPxf16yd7o",
     opts: {
-      era: ["heisei2", "misc"],
+      era: ["reiwa"],
       type: ["insert"],
       series: ["other"],
       cd_only: false
@@ -3653,7 +3652,7 @@ dataSet[dataSetVersion].characterData = [
     name: "IZANAGI",
     img: "K1y3o6JGoSQ",
     opts: {
-      era: ["heisei2", "misc"],
+      era: ["heisei2"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false
@@ -3959,4 +3958,914 @@ dataSet[dataSetVersion].characterData = [
       cd_only: false
     }
   },
+  {
+    name: "liveDevil",
+    img: "JTaSWxeEDS4",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Come Alive",
+    img: "En8-evsTI_o",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Go with the flo",
+    img: "d3ZPTztcVYA",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "VOLCANO",
+    img: "U_p0Xm_v0ys",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "#GekiyaVice",
+    img: "FefzhJteO8U",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Mirage Mirror",
+    img: "5pgxdNoItjo",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "My dream",
+    img: "eDs0Vvbdi-4",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Cherry-ish",
+    img: "dGhmEHJeit8",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "George Karizaki's Rider System",
+    img: "r2DzrWo9egI",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kimi wa Sono Mama de",
+    img: "Dlw_okmE0Us",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Promise",
+    img: "37KXQ1RmPpc",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["revice", "saber"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Without you",
+    img: "M053ac0kQtE",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Without you (DEAR GAGA ver.)",
+    img: "swuuKy3n2nQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Dance Dance",
+    img: "EQ6aCvJiCDU",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Riot in bloom",
+    img: "3lYmT9PPLrk",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["revice", "exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Love yourself",
+    img: "vIlMveim0W4",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Itoshi no Frenemy",
+    img: "2h110Fyfj7A",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Trust・Last",
+    img: "1HCwcLO4v8Q",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "ROLLIN' ROLLIN' PUNK KING",
+    img: "13ue2FmfWyg",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Dangerously",
+    img: "-8g5UKEUj7E",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Nichiyobi no Noraneko",
+    img: "N1wOp_xeUhA",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Negai",
+    img: "BuSLtvZ5-xw",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Chair",
+    img: "B6POsTT2LK4",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Star Of the Stars Of the Stars",
+    img: "A6r-8tmftsk",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "I Peace",
+    img: "iIXjXrncje4",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Beat of My Life",
+    img: "fhHZSfhUwtI",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Undead Fire",
+    img: "UCzf-GvbRMM",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Live for the moment",
+    img: "A2dTMhtb0D8",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Desire Kyuden de Aimashou",
+    img: "ahjhbjm6TAs",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Odds n' Ends",
+    img: "n2Tabq9AiSM",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Non-fiction",
+    img: "0J1eVRcbNC0",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["geats"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Change my future",
+    img: "E8K6THZu2fE",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["geats", "revice"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Desire",
+    img: "0TwsckGCF4g",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "CREATORs",
+    img: "838l3OLK7RM",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "CHEMY×STORY",
+    img: "3ZiiuyY-6lQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "CHEMY×STORY (BACK-ON × FLOW ver.)",
+    img: "ic9jVIjDAko",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Rising Fighter",
+    img: "UlL2hpEQFps",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "What's your FIRE",
+    img: "eyUSrqdpXE0",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kimi ni Zukkyun",
+    img: "g1Ur498feGE",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Living Legend",
+    img: "D4o3IHS1TaI",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "THE SKY'S THE LIMIT",
+    img: "VDyHlE6leNo",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Gotcha! 101 Chemies",
+    img: "MWl1w9jtc28",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "We Are GIRLS!!!",
+    img: "EkrR5JSBAUA",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Dream Hoper",
+    img: "uhapmUyELG4",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Blaze up",
+    img: "Nt9ZRky7iAM",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "One Hint",
+    img: "9WW00RCaHH0",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Gotcha! Let's Go!",
+    img: "5Eq65iCMSnc",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "CRY SIS",
+    img: "GkNpRtnV82Q",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "God's Rain",
+    img: "oPY9UyVZDDQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Kaze no Shugosha",
+    img: "RVP2epl0GlA",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "THE SUN",
+    img: "ZNtWobHf--c",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gotchard"],
+      cd_only: true
+    }
+  },
+  {
+    name: "All for Love",
+    img: "M6KupjACTbE",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["gotchard", "geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "THE FUTURE DAYBREAK",
+    img: "dYVE4-V5z8E",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Go As ONE",
+    img: "d1vnVD_kJvM",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["gotchard", "exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "GRADUATIONS",
+    img: "0Ar0ws9cL10",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["gotchard"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Got Boost?",
+    img: "9GPELfR2t8Y",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["gavv"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Shake it off",
+    img: "-oGgKhriIhw",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["gavv"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Bitter Poison",
+    img: "9W6E9u-RDuY",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["gavv"],
+      cd_only: false
+    }
+  },
+  {
+    name: "HAPPY NOTE",
+    img: "ayQLm-RUFDQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Truth Hunter",
+    img: "TzG3zxBF4tY",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Happy Parade",
+    img: "ahnatd4Nfj8",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Hikentai no Shinka Ni Okeru Kosatsu",
+    img: "ZK59Q7a0vFQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "A ray of light",
+    img: "r9ZbplUwfqQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Lost Symmetry",
+    img: "Li8vtyDk4zM",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "The Formula",
+    img: "Ze90kNpgB9k",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "One More Bite",
+    img: "PKxi6qaGXKE",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["gavv"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Candy Blaze",
+    img: "z-G6c6sujdQ",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["gavv"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Super Delicious",
+    img: "ToEBg3438C4",
+    opts: {
+      era: ["reiwa"],
+      type: ["movie"],
+      series: ["gavv"],
+      cd_only: false
+    }
+  },
+  {
+    name: "VISIONS",
+    img: "0Wt0fEFBVeo",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["zeztz"],
+      cd_only: false
+    }
+  },
+  {
+    name: "PLAY BACK",
+    img: "5F5VEBxlM6k",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["zeztz"],
+      cd_only: false
+    }
+  },
+  {
+    name: "MOVE! TAKE IT!",
+    img: "95DzUX9sryU",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["zeztz"],
+      cd_only: false
+    }
+  },
+  {
+    name: "NemNemNEMOTION",
+    img: "y9GQI5Vqlq4",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["zeztz"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Kickstart",
+    img: "dRmHPVqvDkU",
+    opts: {
+      era: ["reiwa"],
+      type: ["insert"],
+      series: ["zeztz"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Cheerful Policy!",
+    img: "KskL7ep2Xrw",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["zeztz"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Dystopia's Dawn",
+    img: "EbpD2GhJqp4",
+    opts: {
+      era: ["reiwa"],
+      type: ["character"],
+      series: ["zeztz"],
+      cd_only: true
+    }
+  },
+  {
+    name: "Bright! our future",
+    img: "wboDZPwarIM",
+    opts: {
+      era: ["heisei"],
+      type: ["movie"],
+      series: ["exmovie"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Chosen Soldier",
+    img: "DxNCaBq9HdY",
+    opts: {
+      era: ["heisei"],
+      type: ["movie"],
+      series: ["exmovie"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Reason for",
+    img: "M3b2vDgr9-I",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["other"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Armour Zone",
+    img: "hxzuBcuNqls",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "DIE SET DOWN",
+    img: "6Cpl3Fxc-SI",
+    opts: {
+      era: ["heisei2"],
+      type: ["op"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "EAT, KILL ALL",
+    img: "ERKwIwx8L5Q",
+    opts: {
+      era: ["heisei2"],
+      type: ["movie"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "IZANAGI (Tycoon meets Shinobi)",
+    img: "L8B3U_sdf70",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["exseason", "geats"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Did you see the sunrise?",
+    img: "r41R0BKosVw",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "GAME CHANGER",
+    img: "8Y163CSSRhc",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "What's the Outsiders",
+    img: "kU_DAU3OeZI",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["exseasons"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Go As ONE Halloween Ver.",
+    img: "fRLYna9fXlE",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Red Re-born",
+    img: "VjK5YX1dQww",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Deteremined",
+    img: "AjKabvaZgLI",
+    opts: {
+      era: ["reiwa"],
+      type: ["special"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "GET BACK!!",
+    img: "gdySE-paBpw",
+    opts: {
+      era: ["reiwa"],
+      type: ["op"],
+      series: ["other"],
+      cd_only: false
+    }
+  },
+  {
+    name: "Let's Ride",
+    img: "c57Cgms1_Ik",
+    opts: {
+      era: ["heisei"],
+      type: ["op"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  },
+  {
+    name: "DIVE INTO THE MIRROR",
+    img: "ljHFZsyzALQ",
+    opts: {
+      era: ["heisei"],
+      type: ["op"],
+      series: ["exseason"],
+      cd_only: false
+    }
+  }
 ];

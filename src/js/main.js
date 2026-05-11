@@ -670,7 +670,7 @@ function populateOptions() {
       groupbox.parentElement.addEventListener('click', () => {
         opt.sub.forEach((subopt, subindex) => {
           document.getElementById(`cb-${opt.key}-${subindex}`).disabled = !groupbox.checked;
-          if (groupbox.checked) { document.getElementById(`cb-${opt.key}-${subindex}`).checked = true; }
+          //if (groupbox.checked) { document.getElementById(`cb-${opt.key}-${subindex}`).checked = true; }
         });
       });
     } else {
