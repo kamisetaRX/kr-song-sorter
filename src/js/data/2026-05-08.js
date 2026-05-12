@@ -12,13 +12,14 @@ dataSet[dataSetVersion].options = [
       { name: "Heisei Phase 1", key: "heisei", checked: true },
       { name: "Heisei Phase 2", key: "heisei2", checked: true },
       { name: "Reiwa",  key: "reiwa",  checked: true },
+      { name: "Misc",  key: "misc", tooltip: "Things that do not have a defined era", checked: true },      
     ]
   },
   {
     name: "Filter by Type",
     key: "type",
     tooltip: "Check this to restrict song types.",
-    checked: false,
+    checked: true,
     sub: [
       { name: "Opening",        key: "op",        checked: true },
       { name: "Ending",         key: "ed",        checked: true },
@@ -1126,7 +1127,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Kamen Rider SD OP",
     img: "kpq76eaFp8E",
     opts: {
-      era: ["showa"],
+      era: ["misc"],
       type: ["op"],
       series: ["other"]
     }
@@ -2672,7 +2673,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Over Again",
     img: "OuPxf16yd7o",
     opts: {
-      era: ["reiwa"],
+      era: ["misc"],
       type: ["insert"],
       series: ["other"],
       cd_only: false
@@ -2692,7 +2693,7 @@ dataSet[dataSetVersion].characterData = [
     name: "W-G-X ~ W Goes Next ~",
     img: "J12lO8Z2GvM",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["insert"],
       series: ["w"],
       cd_only: false
@@ -2702,7 +2703,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Tsumi to Batsu to Underground",
     img: "VZXXz8BzI58",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["ed"],
       series: ["w"],
       cd_only: false
@@ -2712,7 +2713,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Niau Otoko ni Nare",
     img: "BVmpQg5DFhA",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["movie"],
       series: ["w"],
       cd_only: false
@@ -2722,7 +2723,7 @@ dataSet[dataSetVersion].characterData = [
     name: "W-L-X ~ W got Lost in Matrix ~",
     img: "hIEjIZwvX9Q",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["op"],
       series: ["w"],
       cd_only: false
@@ -3203,7 +3204,7 @@ dataSet[dataSetVersion].characterData = [
     img: "IIAd3g8bMEA",
     opts: {
       era: ["showa"],
-      type: ["movie", "op"],
+      type: ["movie"],
       series: ["ZX"],
       cd_only: false
     }
@@ -4712,7 +4713,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Bright! our future",
     img: "wboDZPwarIM",
     opts: {
-      era: ["heisei"],
+      era: ["misc"],
       type: ["movie"],
       series: ["exmovie"],
       cd_only: false
@@ -4722,7 +4723,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Chosen Soldier",
     img: "DxNCaBq9HdY",
     opts: {
-      era: ["heisei"],
+      era: ["misc"],
       type: ["movie"],
       series: ["exmovie"],
       cd_only: false
@@ -4732,7 +4733,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Reason for",
     img: "M3b2vDgr9-I",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["op"],
       series: ["other"],
       cd_only: false
@@ -4742,7 +4743,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Armour Zone",
     img: "hxzuBcuNqls",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false
@@ -4752,7 +4753,7 @@ dataSet[dataSetVersion].characterData = [
     name: "DIE SET DOWN",
     img: "6Cpl3Fxc-SI",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false
@@ -4762,7 +4763,7 @@ dataSet[dataSetVersion].characterData = [
     name: "EAT, KILL ALL",
     img: "ERKwIwx8L5Q",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["movie"],
       series: ["exseason"],
       cd_only: false
@@ -4772,7 +4773,7 @@ dataSet[dataSetVersion].characterData = [
     name: "IZANAGI (Tycoon meets Shinobi)",
     img: "L8B3U_sdf70",
     opts: {
-      era: ["reiwa"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason", "geats"],
       cd_only: false
@@ -4782,7 +4783,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Did you see the sunrise?",
     img: "r41R0BKosVw",
     opts: {
-      era: ["reiwa"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false
@@ -4829,7 +4830,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
   {
-    name: "Deteremined",
+    name: "Determined",
     img: "AjKabvaZgLI",
     opts: {
       era: ["reiwa"],
@@ -4842,7 +4843,7 @@ dataSet[dataSetVersion].characterData = [
     name: "GET BACK!!",
     img: "gdySE-paBpw",
     opts: {
-      era: ["reiwa"],
+      era: ["misc"],
       type: ["op"],
       series: ["other"],
       cd_only: false
@@ -4852,7 +4853,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Let's Ride",
     img: "c57Cgms1_Ik",
     opts: {
-      era: ["heisei"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false
@@ -4862,7 +4863,7 @@ dataSet[dataSetVersion].characterData = [
     name: "DIVE INTO THE MIRROR",
     img: "ljHFZsyzALQ",
     opts: {
-      era: ["heisei"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false

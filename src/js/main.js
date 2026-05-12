@@ -117,6 +117,7 @@ function init() {
   document.querySelector('.image.selector > select').addEventListener('input', (e) => {
     const imageNum = e.target.options[e.target.selectedIndex].value;
     result(Number(imageNum));
+    setResultsHeight();
   });
 
   /** Show load button if save data exists. */
@@ -518,6 +519,7 @@ function result(imageNum = 3) {
         tiedRankNum = 1;          // The default value is 1, so it increments as normal if no ties.
       }
     }
+    setResultsHeight();
   });
 }
 
@@ -590,22 +592,70 @@ function generateImage() {
   const tzoffset = (new Date()).getTimezoneOffset() * 60000;
   const filename = 'sort-' + (new Date(timeFinished - tzoffset)).toISOString().slice(0, -5).replace('T', '(') + ').png';
 
-  html2canvas(document.querySelector('.results')).then(canvas => {
-    const dataURL = canvas.toDataURL();
-    const imgButton = document.querySelector('.finished.getimg.button');
-    const resetButton = document.createElement('a');
+  const resultsEl = document.querySelector('.results');
+  const prevStyle = resultsEl.getAttribute('style') || '';
 
-    imgButton.removeEventListener('click', generateImage);
-    imgButton.innerHTML = '';
-    imgButton.insertAdjacentHTML('beforeend', `<a href="${dataURL}" download="${filename}">Download Image</a><br><br>`);
+  const COL_COUNT   = 4;
+  const MIN_ROWS    = 20;
+  const TEXT_ROW_H  = 17;
+  const IMAGE_ROW_H = 177;
+  const colWidth    = 302;
+  const captureWidth = COL_COUNT * colWidth + (COL_COUNT - 1) * 5;
 
-    resetButton.insertAdjacentText('beforeend', 'Reset');
-    resetButton.addEventListener('click', (event) => {
-      imgButton.addEventListener('click', generateImage);
-      imgButton.innerHTML = 'Generate Image';
-      event.stopPropagation();
+  // Count items and figure out how many rows each column needs
+  const imageCount  = resultsEl.querySelectorAll('.result.image').length;
+  const textCount   = resultsEl.querySelectorAll('.result:not(.image):not(.head)').length;
+  const totalItems  = imageCount + textCount;
+  const rowsPerCol  = Math.max(MIN_ROWS, Math.ceil(totalItems / COL_COUNT));
+
+  // Convert rows to a pixel max-height, accounting for image rows being taller
+  const maxHeight = (rowsPerCol * TEXT_ROW_H) + (imageCount * (IMAGE_ROW_H - TEXT_ROW_H)) + IMAGE_ROW_H;
+
+  resultsEl.style.cssText = `
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    width: ${captureWidth}px;
+    max-height: ${maxHeight}px;
+    font-size: 0.75em;
+    font-family: 'Rajdhani', Arial, sans-serif;
+    background: #f0eeed;
+    padding: 8px;
+  `;
+
+  // Pre-fetch thumbnails as base64 to bypass CORS on canvas
+  const imgElements = resultsEl.querySelectorAll('.result.image img');
+  const toBase64 = (img) => new Promise((resolve) => {
+    fetch(img.src)
+      .then(r => r.blob())
+      .then(blob => {
+        const reader = new FileReader();
+        reader.onload = () => { img.src = reader.result; resolve(); };
+        reader.readAsDataURL(blob);
+      })
+      .catch(() => resolve());
+  });
+
+  Promise.all(Array.from(imgElements).map(toBase64)).then(() => {
+    html2canvas(resultsEl, { useCORS: true, scrollX: 0, scrollY: 0 }).then(canvas => {
+      resultsEl.setAttribute('style', prevStyle);
+
+      const dataURL = canvas.toDataURL();
+      const imgButton = document.querySelector('.finished.getimg.button');
+      const resetButton = document.createElement('a');
+
+      imgButton.removeEventListener('click', generateImage);
+      imgButton.innerHTML = '';
+      imgButton.insertAdjacentHTML('beforeend', `<a href="${dataURL}" download="${filename}">Download Image</a><br><br>`);
+
+      resetButton.insertAdjacentText('beforeend', 'Reset');
+      resetButton.addEventListener('click', (event) => {
+        imgButton.addEventListener('click', generateImage);
+        imgButton.innerHTML = 'Generate Image';
+        event.stopPropagation();
+      });
+      imgButton.insertAdjacentElement('beforeend', resetButton);
     });
-    imgButton.insertAdjacentElement('beforeend', resetButton);
   });
 }
 
@@ -829,6 +879,28 @@ function reduceTextWidth(text, font, width) {
     }
     return reducedText + '..';
   }
+}
+
+/**
+ * Sets .results max-height so items flow top-to-bottom in columns.
+ * Targets ~20 text rows per column (image rows count as ~12 text rows).
+ */
+function setResultsHeight() {
+  const resultsEl = document.querySelector('.results');
+
+  const COL_COUNT   = 4;
+  const MIN_ROWS    = 20;
+  const TEXT_ROW_H  = 17;
+  const IMAGE_ROW_H = 177;
+
+  const imageCount = resultsEl.querySelectorAll('.result.image').length;
+  const textCount  = resultsEl.querySelectorAll('.result:not(.image):not(.head)').length;
+  const totalItems = imageCount + textCount;
+  const rowsPerCol = Math.max(MIN_ROWS, Math.ceil(totalItems / COL_COUNT));
+
+  const maxHeight = (rowsPerCol * TEXT_ROW_H) + (imageCount * (IMAGE_ROW_H - TEXT_ROW_H)) + IMAGE_ROW_H;
+
+  resultsEl.style.maxHeight = maxHeight + 'px';
 }
 
 window.onload = init;
