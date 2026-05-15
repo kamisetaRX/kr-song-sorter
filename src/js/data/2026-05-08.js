@@ -2683,7 +2683,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Private Eye",
     img: "h-HSlpBApnQ",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["op"],
       series: ["w"],
       cd_only: false
@@ -3653,7 +3653,7 @@ dataSet[dataSetVersion].characterData = [
     name: "IZANAGI",
     img: "K1y3o6JGoSQ",
     opts: {
-      era: ["heisei2"],
+      era: ["misc"],
       type: ["op"],
       series: ["exseason"],
       cd_only: false
