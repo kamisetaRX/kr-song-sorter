@@ -3850,7 +3850,7 @@ dataSet[dataSetVersion].characterData = [
     }
   },
   {
-    name: "Fontier",
+    name: "Frontier",
     img: "P36LY6X5OyA",
     opts: {
       era: ["reiwa"],
@@ -4651,7 +4651,7 @@ dataSet[dataSetVersion].characterData = [
   },
   {
     name: "PLAY BACK",
-    img: "5F5VEBxlM6k",
+    img: "efu7Ha7Yt5g",
     opts: {
       era: ["reiwa"],
       type: ["op"],
